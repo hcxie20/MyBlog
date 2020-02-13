@@ -1,0 +1,14 @@
+<%- include("partials/header") %>
+
+<div class="container border mt-3">
+    <div><%=blog.title%></div>
+    <div><img src="<%=blog.image%>" alt=""></div>
+    <span><%=blog.created%></span>
+    <p><%-blog.body%></p>
+</div>
+<div class="container">
+    <a class="btn" href="/blogs/<%=blog._id%>/edit">EDIT</a>
+</div>
+
+
+<%- include("partials/footer") %>
