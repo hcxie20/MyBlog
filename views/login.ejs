@@ -1,0 +1,22 @@
+<%- include("partials/header")%>
+<div class="container">
+    <h1 style="text-align: center">Login</h1>
+    <h2 style="text-align: center">Only owner can login</h2>
+    <div style="width: 30%; margin: 0 auto;">
+        <form action="/blogs/login", method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" name="user[username]" placeholder="username">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="user[password]" placeholder="password">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-md btn-primary p-1 btn-block">Submit</button>
+            </div>
+        </form>
+    </div>
+    
+</div>
+
+
+<%- include("partials/footer")%>
