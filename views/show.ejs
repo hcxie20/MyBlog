@@ -1,14 +1,19 @@
 <%- include("partials/header") %>
+<div class="container main">    
+    <div class="container blog">
+        <h2 class="ml-3">
+            <%= blog.title%>
+            <small class="text-muted fload-right"><%=blog.created%></small>
+        </h2>
+        <div class="container">
+            <p class="mb-0"><%-blog.body.split("\n").join("<br/>")%></p>
+        </div>
+    </div>
+    <div class="container">
+        <a class="btn btn-primary float-right" href="/blogs/<%-blog._id%>/edit">EDIT</a>
+    </div>
+</div>
 
-<div class="container border mt-3">
-    <div><%=blog.title%></div>
-    <div><img src="<%=blog.image%>" alt=""></div>
-    <span><%=blog.created%></span>
-    <p><%-blog.body%></p>
-</div>
-<div class="container">
-    <a class="btn" href="/blogs/<%=blog._id%>/edit">EDIT</a>
-</div>
 
 
 <%- include("partials/footer") %>
