@@ -31,7 +31,6 @@ mongoose.connect("mongodb://localhost/blog_app")
 
 var blogSchema = new mongoose.Schema({
     title: String,
-    image: String,
     body: String,
     created: {
         type: Date, default: Date.now
