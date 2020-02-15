@@ -9,7 +9,7 @@
             <div class="container blog">
                 <h2 class="ml-3">
                     <%= blog.title%>
-                    <small class="text-muted fload-right"><%=blog.created%></small>
+                    <small class="text-muted float-right"><%=blog.created.getMonth()%> / <%=blog.created.getDate()%>, <%=blog.created.getFullYear()%></small>
                 </h2>
                 <div class="container">
                     <% if (blog.body.length > 700){%> 
