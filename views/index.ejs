@@ -11,6 +11,7 @@
                     <%= blog.title%>
                     <small class="text-muted float-right"><%=blog.created.getMonth()%> / <%=blog.created.getDate()%>, <%=blog.created.getFullYear()%></small>
                 </h2>
+                <hr>
                 <div class="container">
                     <% if (blog.body.length > 700){%> 
                         <p class="mb-0"><%-blog.body.substring(0, 700)%>...</p>
