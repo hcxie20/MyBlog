@@ -5,3 +5,13 @@ i.icon {
 .container.main{
     margin-top: 50px;
 }
+
+.container.blog{
+    background: white;
+    border: 1px black solid;
+    margin: 20px;
+}
+
+body {
+    background: #ededed;
+}

@@ -1,16 +1,28 @@
 <%- include("partials/header") %>
 
-<h1>Index</h1>
 
-<div class="container">
+<div class="container main">
+    <h1 class="text-center">Welcome to J's blog</h1>
+
     <% blogs.forEach(function(blog){ %> 
         <% if (blog!==undefined) {%> 
-            <div class="container border m-2">
-                <h2><%= blog.title%></h2>
-                <img src="<%=blog.image%>" alt="">
-                <span><%=blog.created%></span>
-                <p><%-blog.body.substring(0, 100)%></p>
-                <a href="/blogs/<%=blog._id%>">See more</a>
+            <div class="container blog">
+                <h2>
+                    <%= blog.title%>
+                    <small class="text-muted fload-right"><%=blog.created%></small>
+                </h2>
+                <div class="container">
+                    <% if (blog.body.length > 700){%> 
+                        <p class="mb-0"><%-blog.body.substring(0, 700)%>...</p>
+                    <% }else { %> 
+                        <p class="mb-0"><%-blog.body%></p>
+                    <% }%>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="float-right m-3">
+                        <a class="btn btn-primary" href="/blogs/<%=blog._id%>">See more</a>
+                    </div>
+                </div>
             </div>
         <% } %> 
     <% }) %> 

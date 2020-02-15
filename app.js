@@ -49,7 +49,7 @@ app.get("/blogs", function(req, res){
             console.log(err)
             res.send("Error")
         } else {
-            res.render("index", {blogs: blogs})
+            res.render("index", {blogs: blogs.reverse()})
         }
     })
 })
@@ -109,7 +109,7 @@ app.get("/blogs/:id", function(req, res){
     })
 })
 
-app.get("/blogs/:id/edit", function(req, res){
+app.get("/blogs/:id/edit", isLoggedIn, function(req, res){
     Blog.findById(req.params.id, function(err, blog){
         if(err){
             console.log(err)
@@ -119,7 +119,7 @@ app.get("/blogs/:id/edit", function(req, res){
     })
 })
 
-app.put("/blogs/:id", function(req, res){
+app.put("/blogs/:id", isLoggedIn, function(req, res){
     Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
         if(err){
             res.redirect("/blogs")
