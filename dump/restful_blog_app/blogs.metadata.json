@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"restful_blog_app.blogs"}],"uuid":"08bb45efadb74299bf7b5fb52d762b3e"}

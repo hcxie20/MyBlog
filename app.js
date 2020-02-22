@@ -42,7 +42,7 @@ var Blog = mongoose.model("Blog", blogSchema)
 app.get("/", function(req, res){
     res.redirect("blogs")
 })
-
+       
 app.get("/blogs", function(req, res){
     Blog.find({}, function(err, blogs){
         if(err){
@@ -58,7 +58,7 @@ app.get("/blogs/new", isLoggedIn, function(req, res){
     res.render("new")
 })
 
-app.post("/blogs", isLoggedIn, function(req, res){
+app.post("/blogs", isLoggedIn, function(req, res){ 
     Blog.create(req.body.blog, function(err, newBlog){
         if(err){
             console.log(err)
